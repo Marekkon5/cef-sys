@@ -15,8 +15,8 @@ fn main() {
     let unpack_sentinel_env_var = std::env::var(unpack_sentinel_env_var).ok();
     let cmake_dir_env_var = std::env::var(cmake_dir_env_var).ok();
 
-
-    let cef_version = "84.3.10+ga46056b+chromium-84.0.4147.105";
+    // let cef_version = "84.3.10+ga46056b+chromium-84.0.4147.105";
+    let cef_version = "89.0.6+g6f30454+chromium-89.0.4389.72";
     let cef_platform = match std::env::var("CARGO_CFG_TARGET_OS").unwrap().as_str() {
         "windows" => cef_installer::Platform::Windows,
         "linux" => cef_installer::Platform::Linux,

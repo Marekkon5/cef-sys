@@ -36,7 +36,7 @@ pub fn download_cef(
     cmake_macros_dir: Option<&Path>,
     quiet: bool,
 ) -> Result<(), Box<dyn std::error::Error>> {
-    let file_name = format!("cef_binary_{}_{}64.tar.bz2", &version, &platform.str());
+    let file_name = format!("cef_binary_{}_{}64_minimal.tar.bz2", &version, &platform.str());
 
     let reader: Box<dyn Read> = {
         let targz_path = targz_dir
@@ -53,7 +53,7 @@ pub fn download_cef(
             },
             None => {
                 let url = format!(
-                    "http://opensource.spotify.com/cefbuilds/{}",
+                    "https://cef-builds.spotifycdn.com/{}",
                     urlencode(&file_name),
                 );
 
